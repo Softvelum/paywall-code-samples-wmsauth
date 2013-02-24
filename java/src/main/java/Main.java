@@ -15,7 +15,7 @@ public class Main {
 		DateTime currentServerTime = new DateTime(DateTimeZone.UTC); // lets get localtime in UTC timezone
 		String today = timeFormatter.print(currentServerTime);
 		String initial_url = "rtsp://ec2-test-ip.compute.amazonaws.com:1935/live/Stream1";
-   	    String ip = "95.154.108.229";
+   	    String ip = "127.0.0.1";
 		String key = "defaultpassword";
 		String validminutes = "20";
 

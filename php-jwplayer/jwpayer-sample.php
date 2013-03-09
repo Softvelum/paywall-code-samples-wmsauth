@@ -17,7 +17,7 @@ jwplayer("my-video").setup({
         sources: [{
             file: "rtmp://streamserver.yourdomain.com/live?wmsAuthSign=<?="$base64urlsignature"?>/mp4:my-stream.sdp"
         },{
-            file: "http://streamserver.yourdomain.com:1935/live/mp4:my-stream.sdp/playlist.m3u8/wmsAuthSign=<?="$base64urlsignature"?>"
+            file: "http://streamserver.yourdomain.com:1935/live/mp4:my-stream.sdp/playlist.m3u8?wmsAuthSign=<?="$base64urlsignature"?>"
         }]
     }],
     height: 480,

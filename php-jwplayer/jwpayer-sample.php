@@ -15,9 +15,9 @@ $base64urlsignature = base64_encode($urlsignature);
 jwplayer("my-video").setup({
     playlist: [{
         sources: [{
-            file: "rtmp://streamserver.yourdomain.com/live?wmsAuthSign=<?="$base64urlsignature"?>/mp4:my-stream.sdp"
+            file: "rtmp://streamserver.yourdomain.com/live?wmsAuthSign=<?php echo $base64urlsignature;?>/mp4:my-stream.sdp"
         },{
-            file: "http://streamserver.yourdomain.com:1935/live/mp4:my-stream.sdp/playlist.m3u8?wmsAuthSign=<?="$base64urlsignature"?>"
+            file: "http://streamserver.yourdomain.com:1935/live/mp4:my-stream.sdp/playlist.m3u8?wmsAuthSign=<?php echo $base64urlsignature;?>"
         }]
     }],
     height: 480,

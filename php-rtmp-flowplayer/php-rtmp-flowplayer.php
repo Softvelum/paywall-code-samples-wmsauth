@@ -63,10 +63,8 @@ $f("a.rtmp", "http://releases.flowplayer.org/swf/flowplayer-3.2.16.swf", {
         // here is our rtpm plugin configuration
         plugins: {
           rtmp: {
- 
-               // use latest RTMP plugin release
                 url:"http://releases.flowplayer.org/swf/flowplayer.rtmp-3.2.12.swf",
-                netConnectionUrl: '<?php echo $base_url; ?>?wmsAuthSign=<?php echo $base64urlsignature; ?>'
+                netConnectionUrl: '<?php echo "$base_url?wmsAuthSign=$base64urlsignature"; ?>'
           }
         }
  

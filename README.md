@@ -1,12 +1,12 @@
 Code snippets for WMSAuth hot-linking protection
 =====================
 
-WMSAuth is a feature set for WMSPanel, the admin and reporting panel. This set allows restriction of your media access by:
+WMSAuth is a feature set of WMSPanel, the admin and reporting panel. This feature set can be applied to **Wowza Media Server** and **Nimble Streamer**. It allows restriction of your media access by:
 - hot-linking re-publishing protection;
 - geo-location and IP ranges;
 - connections count.
 
-This protection and restriction may be applied for **Wowza Media Server** and **Nimble Streamer**.
+This protection and restriction may be 
 
 Read more about it in this blog post: http://blog.wmspanel.com/2012/09/wowza-geo-ip-range-connections-lock.html
 

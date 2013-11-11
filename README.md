@@ -6,9 +6,7 @@ WMSAuth is a feature set of WMSPanel, the admin and reporting panel. This featur
 - geo-location and IP ranges;
 - connections count.
 
-This protection and restriction may be 
-
-Read more about it in this blog post: http://blog.wmspanel.com/2012/09/wowza-geo-ip-range-connections-lock.html
+Please read Paywall section of WMSPanel website for details: https://wmspanel.com/paywall
 
 Current sample code snippets are provided for quick and seamless integration of hot-linking protection.
 
@@ -20,10 +18,6 @@ Current sample code snippets are provided for quick and seamless integration of 
 - "php-rtmp-flowplayer" is a sample for flowpayer with RTMP stream
 - "python" is obviously a Python sample
 
-Please read the following posts describing Wowza re-streamign protection integration for your web site:
-- http://blog.wmspanel.com/2012/05/protecting-wowza-from-re-publishing-re.html
-- http://blog.wmspanel.com/2012/07/wmsauth-rtmp-protection-sample.html
-- http://blog.wmspanel.com/2012/05/integrating-wmsauth-to-your-website.html
 
 These code samples can also be applied to WMSAuth for Nimble Streamer. This functionality allows hot-linking protection and domain locking for HTTP Live Streaming, Smooth Streaming and progressive downoad. 
 - http://blog.wmspanel.com/2013/11/nimble-streamer-protect-hotlinking-domain-lock.html

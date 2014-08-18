@@ -39,6 +39,6 @@ public class URLProcessor
 
 	  public static void Main()
 	  {
-		Console.WriteLine(BuildProtectedURLWithValidity("defaultpassword", "rtsp://ec2-test-ip.compute.amazonaws.com:1935/live/Stream1", "127.0.0.1", 20));
+		Console.WriteLine(BuildProtectedURLWithValidity("defaultpassword", "http://127.0.0.1:1935/vod/sample.mp4/playlist.m3u8", "127.0.0.1", 20));
           }
 }

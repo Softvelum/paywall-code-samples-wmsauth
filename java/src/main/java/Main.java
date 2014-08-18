@@ -14,7 +14,8 @@ public class Main {
 	    DateTimeFormatter timeFormatter = DateTimeFormat.forPattern("M/d/y h:m:s a").withZone(DateTimeZone.UTC).withLocale(Locale.US);
 		DateTime currentServerTime = new DateTime(DateTimeZone.UTC); // lets get localtime in UTC timezone
 		String today = timeFormatter.print(currentServerTime);
-		String initial_url = "rtsp://ec2-test-ip.compute.amazonaws.com:1935/live/Stream1";
+		String initial_url = "rtsp://ec2-test-ip.compute.amazonaws.com:1935/live";
+		String video_url = "/Stream1";
    	    String ip = "127.0.0.1";
 		String key = "defaultpassword";
 		String validminutes = "20";
@@ -24,7 +25,7 @@ public class Main {
 		String base64hash = Base64.encodeBase64String(DigestUtils.md5(ascii_to_hash));
 		String urlsignature = "server_time=" + today  + "&hash_value=" + base64hash + "&validminutes=" + validminutes;
 		String base64urlsignature = Base64.encodeBase64String(urlsignature.getBytes("UTF-8"));
-		String signedurlwithvalidinterval = initial_url + "?wmsAuthSign=" + base64urlsignature;
+		String signedurlwithvalidinterval = initial_url + "?wmsAuthSign=" + base64urlsignature + video_url;
 
 		return;
 	}

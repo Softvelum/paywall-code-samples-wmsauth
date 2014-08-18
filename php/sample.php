@@ -2,8 +2,9 @@
 
 $today = gmdate("n/j/Y g:i:s A");
  
-$initial_url = "rtsp://ec2-test-ip.compute.amazonaws.com:1935/live/Stream1";
-  
+$initial_url = "rtsp://ec2-test-ip.compute.amazonaws.com:1935/live";
+$video_url = "/Stream1"
+
 $ip = $_SERVER['REMOTE_ADDR'];
 $key = "defaultpassword";
  
@@ -19,6 +20,6 @@ $urlsignature = "server_time=" . $today ."&hash_value=" . $base64hash. "&validmi
 
 $base64urlsignature = base64_encode($urlsignature);
 
-$signedurlwithvalidinterval = $initial_url . "?wmsAuthSign=$base64urlsignature";
+$signedurlwithvalidinterval = $initial_url . "?wmsAuthSign=$base64urlsignature" . $video_url;
  
 ?>

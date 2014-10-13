@@ -3,7 +3,7 @@
 $today = gmdate("n/j/Y g:i:s A");
  
 $initial_url = "rtsp://ec2-test-ip.compute.amazonaws.com:1935/live";
-$video_url = "/Stream1"
+$video_url = "/Stream1";
 
 $ip = $_SERVER['REMOTE_ADDR'];
 $key = "defaultpassword";

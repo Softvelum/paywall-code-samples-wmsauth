@@ -14,7 +14,7 @@ Current sample code snippets are provided for quick and seamless integration of 
 - "java" contains Java snippet for RTSP
 - "javascript" has NodeJS JavaScript sample snippet
 - "php" has snippet for PHP processing of RTSP URL
-- "php-jwplayer" has a snippet which contains JWPlayer with HLS and RTMP streams
+- "php-jwplayer" has a code which contains JWPlayer with HLS and RTMP streams. It also has example of PHP code for cases when your server works from behind the proxy.
 - "php-rtmp-flowplayer" is a sample for flowpayer with RTMP stream
 - "python" is obviously a Python sample
 - "stream-signature" is an example of media stream signature with stream name in it

@@ -1,7 +1,7 @@
 <?php
 $today = gmdate("n/j/Y g:i:s A");
 $ip = isset(
-    $_SERVER["HTTP_CF_CONNECTING_IP"]) ? 
+    $_SERVER["HTTP_CF_CONNECTING_IP"] ? 
     $_SERVER["HTTP_CF_CONNECTING_IP"] : 
     isset(
         $_SERVER["HTTP_X_FORWARDED_FOR"] ?

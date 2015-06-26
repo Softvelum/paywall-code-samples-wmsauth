@@ -1,6 +1,19 @@
 <?php
 $today = gmdate("n/j/Y g:i:s A");
-$ip = isset($_SERVER["HTTP_CF_CONNECTING_IP"]) ? $_SERVER["HTTP_CF_CONNECTING_IP"] : isset($_SERVER["HTTP_X_FORWARDED_FOR"]) ? $_SERVER["HTTP_X_FORWARDED_FOR"] : $_SERVER["REMOTE_ADDR"];
+
+$ip = $_SERVER['REMOTE_ADDR'];
+if (!empty($_SERVER["HTTP_CF_CONNECTING_IP"])) {
+    $ip = $_SERVER['HTTP_CF_CONNECTING_IP'];
+} elseif (!empty($_SERVER['HTTP_X_REAL_IP'])) {
+    $ip = $_SERVER['HTTP_X_REAL_IP'];
+} elseif (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    $ip = $_SERVER['HTTP_CLIENT_IP'];
+} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    $commapos = strrpos($ip, ',');
+    $ip = trim( substr($ip, $commapos ? $commapos + 1 : 0) );
+}
+
 $key = "defaultpassword";
 $validminutes = 20;
 $str2hash = $ip . $key . $today . $validminutes;

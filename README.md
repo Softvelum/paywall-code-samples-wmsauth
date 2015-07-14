@@ -1,4 +1,4 @@
-Code snippets for WMSAuth Paywall hot-linking protection
+Code snippets for WMSAuth Paywall feature set
 =====================
 
 WMSAuth Paywall is a feature set of WMSPanel which is the admin and reporting panel for media servers. This feature set can be applied to **Wowza Streaming Engine** (https://wmspanel.com/wowza) and **Nimble Streamer** (https://wmspanel.com/nimble). It allows restriction of your media access by:
@@ -8,9 +8,9 @@ WMSAuth Paywall is a feature set of WMSPanel which is the admin and reporting pa
 
 Please read Paywall section of WMSPanel website for details: https://wmspanel.com/paywall
 
-Current sample code snippets are provided for quick and seamless integration of hot-linking protection. The repository directories have the code as described below.
+"pay-per-view" directory has reference code, requests and responses for pay-per-view feature set described in respective articles for Nimble Streamer and Wowza.
 
-"pay-per-view" has reference code, requests and responses for pay-per-view feature set described in respective articles for Nimble Streamer and Wowza.
+The following sample code snippets are provided for quick and seamless integration of hot-linking protection. The repository directories have the code as described below.
 
 "CSharp" contains C# snippet.
 

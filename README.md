@@ -1,7 +1,7 @@
 Code snippets for WMSAuth hot-linking protection
 =====================
 
-WMSAuth is a feature set of WMSPanel, the admin and reporting panel. This feature set can be applied to **Wowza Media Server** (https://wmspanel.com/wowza) and **Nimble Streamer** (https://wmspanel.com/nimble). It allows restriction of your media access by:
+WMSAuth Paywall is a feature set of WMSPanel which is the admin and reporting panel for media servers. This feature set can be applied to **Wowza Streaming Engine** (https://wmspanel.com/wowza) and **Nimble Streamer** (https://wmspanel.com/nimble). It allows restriction of your media access by:
 - hot-linking re-publishing protection;
 - geo-location and IP ranges;
 - connections count.

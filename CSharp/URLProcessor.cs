@@ -39,6 +39,6 @@ public class URLProcessor
 
 	  public static void Main()
 	  {
-		Console.WriteLine(BuildProtectedURLWithValidity("defaultpassword", "http://127.0.0.1:1935/vod/sample.mp4/playlist.m3u8", "127.0.0.1", 20));
+		Console.WriteLine(BuildProtectedURLWithValidity("defaultpassword", "http://yourdomain.com:8081/vod/sample.mp4/playlist.m3u8", "127.0.0.1", 20));
           }
 }

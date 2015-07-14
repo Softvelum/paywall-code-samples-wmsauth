@@ -8,7 +8,7 @@ print(today)
 ip = "127.0.0.1"
 password = "defaultpassword"
 validminutes = "10"
-initial_url = "http://127.0.0.1:1935/vod/sample.mp4/playlist.m3u8"
+initial_url = "http://yourdomain.com:8081/vod/sample.mp4/playlist.m3u8"
 
 m = md5.new()
 m.update(ip + password + today + validminutes)

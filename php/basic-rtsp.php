@@ -1,4 +1,8 @@
 <?php
+/*
+This is a sample code for adding WMSAuth paywall signature to RTSP stream.
+For RTSP, the signature is inserted after application name.
+*/
 
 $today = gmdate("n/j/Y g:i:s A");
  

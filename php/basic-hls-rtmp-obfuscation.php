@@ -1,4 +1,7 @@
 <?php
+/*
+This code example for obfuscating URL and its WMSAuth paywall signature to avoid parsing.
+*/
 $today = gmdate("n/j/Y g:i:s A");
 $ip = $_SERVER['REMOTE_ADDR'];
 $key = "YOUR_PASSWORD";
@@ -9,11 +12,15 @@ $base64hash = base64_encode($md5raw);
 $urlsignature = "server_time=" . $today ."&hash_value=" . $base64hash. "&validminutes=$validminutes";
 $base64urlsignature = base64_encode($urlsignature);
 
-$rtmpbegin = "rtmp://bestsite.my/mylive?wmsAuthSign=";
-$rtmpend = "mystream";
+//For RTMP, the signature is inserted after application name.
+$rtmpurl = "rtmp://bestsite.my/mylive?wmsAuthSign=";
+$rtmpstream = "mystream";
+//For HLS,  the signature is inserted at the end of the URL
+$httpurl = "http://bestsite.my/mylive/mystream?wmsAuthSign=";
 
-$rtmpbeginarray = str_split($rtmpbegin, 1);
-$rtmpendarray = str_split($rtmpend, 1);
+$rtmpurlarray = str_split($rtmpurl, 1);
+$rtmpstreamarray = str_split($rtmpstream, 1);
+$httpurlarray = str_split($httpurl, 1);
 
 $firstsigpart = substr($base64urlsignature, 0, -48); 
 $lastsigpart = substr($base64urlsignature, -48);
@@ -23,7 +30,8 @@ $signaturearray = str_split($firstsigpart, 3);
 $fakesignaturearray = str_split($firstsigpart, 3);
 
 $getrtmptitle = str_shuffle("getRtmpUrl");
-$getrtmpfiletitle = str_shuffle("getRtmpFile");
+$getrtmpstreamtitle = str_shuffle("getRtmpStream");
+$gethttptitle = str_shuffle("getHttpUrl");
 $shiftbacktitle = str_shuffle("shiftBackSignature");
 $fakeshiftbacktitle = str_shuffle("shiftBeckSignature");
 $signaturetitle = str_shuffle("baseUrlSignatureArray");
@@ -65,22 +73,29 @@ var <?php echo($signaturetitle); ?> = <?php echo(json_encode($signaturearray)); 
 ?>
 
     jwplayer("mediaspace").setup({
-        flashplayer: "player.swf",
+        sources: [{
+            file: <?php echo($getrtmptitle . "()"); ?> + '/' + <?php echo($getrtmpstreamtitle . "()"); ?>
+        },{
+            file: <?php echo($gethttptitle . "()"); ?>
+        }],
         width: '468',
         height: '380',
         allowfullscreen: 'true',
         allowscriptaccess: 'always',
-        streamer: <?php echo($getrtmptitle . "()"); ?>,
-        file: <?php echo($getrtmpfiletitle . "()"); ?>,
         repeat: 'always'
     });
 
     function <?php echo($getrtmptitle . "()"); ?> {
-        return(<?php echo(json_encode($rtmpbeginarray)); ?>.join("") + <?php echo($signaturetitle); ?>.join("") + document.getElementById("<?php echo($shiftbacktitle); ?>").innerHTML);
+        return(<?php echo(json_encode($rtmpurlarray)); ?>.join("") + <?php echo($signaturetitle); ?>.join("") + document.getElementById("<?php echo($shiftbacktitle); ?>").innerHTML);
     }
 
-    function <?php echo($getrtmpfiletitle . "()");?> {
-        return(<?php echo(json_encode($rtmpendarray)); ?>.join(""));
+    function <?php echo($getrtmpstreamtitle . "()");?> {
+        return(<?php echo(json_encode($rtmpstreamarray)); ?>.join(""));
     }
+
+    function <?php echo($gethttptitle . "()"); ?> {
+        return(<?php echo(json_encode($httpurlarray)); ?>.join("") + <?php echo($signaturetitle); ?>.join("") + document.getElementById("<?php echo($shiftbacktitle); ?>").innerHTML);
+    }
+
 
 </script>

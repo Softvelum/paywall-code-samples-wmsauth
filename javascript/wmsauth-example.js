@@ -133,7 +133,7 @@ var http = require('http');
 http.createServer(function (req, res) {
 	  res.writeHead(200, {'Content-Type': 'text/plain'});
 	  var today = (new Date()).format("UTC:m/d/yyyy h/MM/ss TT");
-	  var initial_url = "rtsp://ec2-test-ip.compute.amazonaws.com:1935/live/Stream1";
+	  var initial_url = "http://yourdomain.com:8081/live/stream/playlist.m3u8";
 	  var ip = req.connection.remoteAddress;
 	  var key = "defaultpassword";
 	  var validminutes = 20;

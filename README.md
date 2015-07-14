@@ -10,13 +10,15 @@ Please read Paywall section of WMSPanel website for details: https://wmspanel.co
 
 Current sample code snippets are provided for quick and seamless integration of hot-linking protection. The repository directories have the code as described below.
 
-"CSharp" contains C# snippet
+"pay-per-view" has reference code, requests and responses for pay-per-view feature set described in respective articles for Nimble Streamer and Wowza.
 
-"java" contains Java snippet 
+"CSharp" contains C# snippet.
 
-"javascript" contains NodeJS JavaScript snippet
+"java" contains Java snippet.
 
-"python" contains Python snippet
+"javascript" contains NodeJS JavaScript snippet.
+
+"python" contains Python snippet.
 
 "php" contains snippets for PHP:
 - jwpayer-rtmp-hls.php - code sample for JWPlayer with RTMP and HLS

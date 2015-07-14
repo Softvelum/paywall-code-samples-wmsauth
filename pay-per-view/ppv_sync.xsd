@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+		jaxb:version="2.0" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+		jaxb:extensionBindingPrefixes="xjc">
+
+	<!-- See https://jaxb.dev.java.net/2.1.2/docs/vendorCustomizations.html#simple  -->
+	<xsd:annotation>
+		<xsd:appinfo>
+			<jaxb:globalBindings>
+				<xjc:simple/>
+			</jaxb:globalBindings>
+		</xsd:appinfo>
+	</xsd:annotation>
+
+        <xsd:complexType name="ApiSyncRequest">
+        <xsd:sequence>
+            <xsd:element name="ID" type="xsd:string"/>
+            <xsd:element name="Signature" type="xsd:string"/>
+            <xsd:element name="Puzzle" type="xsd:string"/>
+            <xsd:element name="Publish" minOccurs="0" maxOccurs="unbounded">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="VHostName" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        <xsd:element name="AppName" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        <xsd:element name="AppInstanceName" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        <xsd:element name="StreamName" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <xsd:element name="Unpublish" minOccurs="0" maxOccurs="unbounded">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="VHostName" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        <xsd:element name="AppName" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        <xsd:element name="AppInstanceName" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        <xsd:element name="StreamName" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <xsd:element name="PayPerViewInfo" minOccurs="0" maxOccurs="1">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="VHost" minOccurs="0" maxOccurs="unbounded">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element name="name" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                    <xsd:element name="Application" minOccurs="0" maxOccurs="unbounded">
+                                        <xsd:complexType>
+                                            <xsd:sequence>
+                                                <xsd:element name="name" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Instance" minOccurs="0" maxOccurs="unbounded">
+                                                    <xsd:complexType>
+                                                        <xsd:sequence>
+                                                            <xsd:element name="name" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                            <xsd:element name="Stream" minOccurs="0" maxOccurs="unbounded">
+                                                                <xsd:complexType>
+                                                                    <xsd:sequence>
+                                                                        <xsd:element name="name" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                                                        <xsd:element name="Player" minOccurs="0" maxOccurs="unbounded">
+                                                                            <xsd:complexType>
+                                                                                <xsd:sequence>
+                                                                                    <xsd:element name= "id" type="xsd:string"/>
+                                                                                    <xsd:element name= "ip" type="xsd:string"/>
+                                                                                    <xsd:element name= "sessionid" type="xsd:string"/>
+                                                                                    <xsd:element name= "delta" type="xsd:long"/>
+                                                                                </xsd:sequence>
+                                                                            </xsd:complexType>
+                                                                        </xsd:element>
+                                                                    </xsd:sequence>
+                                                                </xsd:complexType>
+                                                            </xsd:element>
+                                                        </xsd:sequence>
+                                                    </xsd:complexType>
+                                                </xsd:element>
+                                            </xsd:sequence>
+                                        </xsd:complexType>
+                                    </xsd:element>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="ApiSyncRequest" type="ApiSyncRequest"/>
+
+    <xsd:complexType name="ApiSyncResponse">
+        <xsd:sequence>
+            <xsd:element name="Solution" type="xsd:string"/>
+            <xsd:element name="DenyList" minOccurs="0" maxOccurs="1">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="ID" minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="ApiSyncResponse" type="ApiSyncResponse"/>
+</xsd:schema>

@@ -1,7 +1,7 @@
 <?php
 // Log entire incoming request to see what we have in it.
 $fp = fopen('/var/tmp/request.log', 'w');
-fwrite($fp, $HTTP_RAW_POST_DATA);
+fwrite($fp, file_get_contents("php://input"));
 fclose($fp);
 
 // Use this object for accessing each viewer's ID, IP and stream name.

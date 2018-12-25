@@ -5,7 +5,7 @@ fwrite($fp, $HTTP_RAW_POST_DATA);
 fclose($fp);
 
 // Use this object for accessing each viewer's ID, IP and stream name.
-$sync_data = json_decode($HTTP_RAW_POST_DATA);
+$sync_data = json_decode(file_get_contents("php://input"));
 
 // Return IDs of clients which needs to be denied. Their IDs are 1 and 2 here.
 // Those viewers will be disconnected immediatelly and will not be allowed to connect anymore.

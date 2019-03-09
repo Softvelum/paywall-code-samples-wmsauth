@@ -27,6 +27,7 @@ The following sample code snippets are provided for quick and seamless integrati
 - basic-hls-rtmp-obfuscation.php - basic sample for HLS and RTMP with code obfuscation agains grabbers, see this article for details: https://blog.wmspanel.com/2015/07/protecting-media-links-from-web-scraping.html
 - basic-hls-stream-based.php - basic sample for HLS where signature includes streams name
 - basic-rtsp.php - basic sample for RTSP
+- ppv-rtsp-rtmp.php - sample of RTMP and RTSP signature for pay-per-view
 
 
 You may also check publish control framework for managing streams publishers: https://blog.wmspanel.com/2015/10/rtsp-publish-control-framework-overview.html

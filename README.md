@@ -29,5 +29,6 @@ The following sample code snippets are provided for quick and seamless integrati
 - basic-rtsp.php - basic sample for RTSP
 - ppv-rtsp-rtmp.php - sample of RTMP and RTSP signature for pay-per-view
 
+If you look for code samples for Android or iOS, notice that we do not recommend using link signature code in mobile apps. Please read Q19 in paywall FAQ: https://wmspanel.com/paywall/faq 
 
 You may also check publish control framework for managing streams publishers: https://blog.wmspanel.com/2015/10/rtsp-publish-control-framework-overview.html

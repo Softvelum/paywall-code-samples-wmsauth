@@ -1,12 +1,12 @@
 Code snippets for WMSAuth Paywall feature set
 =====================
 
-WMSAuth Paywall is a feature set of WMSPanel which is the admin and reporting panel for media servers. This feature set can be applied to **Wowza Streaming Engine** (https://wmspanel.com/wowza) and **Nimble Streamer** (https://wmspanel.com/nimble). It allows restriction of your media access by:
+WMSAuth Paywall is a feature set of WMSPanel which is the admin and reporting panel for media servers. This feature set can be applied to **Nimble Streamer** (https://wmspanel.com/nimble) and **Wowza Streaming Engine** (https://wmspanel.com/wowza). It allows restriction of your media access by:
 - hot-linking re-publishing protection;
 - geo-location and IP ranges;
 - connections count.
 
-Please read Paywall section of WMSPanel website for details: https://wmspanel.com/paywall
+Please read Paywall section of Softvelum website for details: https://softvelum.com/paywall
 
 "pay-per-view" directory has reference code, requests and responses for pay-per-view feature set described in respective articles for Nimble Streamer and Wowza.
 
@@ -29,6 +29,6 @@ The following sample code snippets are provided for quick and seamless integrati
 - basic-rtsp.php - basic sample for RTSP
 - ppv-rtsp-rtmp.php - sample of RTMP and RTSP signature for pay-per-view
 
-If you look for code samples for Android or iOS, notice that we do not recommend using link signature code in mobile apps. Please read Q19 in paywall FAQ: https://wmspanel.com/paywall/faq 
+If you look for code samples for Android or iOS, notice that we do not recommend using link signature code in mobile apps. Please read Q19 in paywall FAQ: https://softvelum.com/paywall/faq 
 
 You may also check publish control framework for managing streams publishers: https://blog.wmspanel.com/2015/10/rtsp-publish-control-framework-overview.html

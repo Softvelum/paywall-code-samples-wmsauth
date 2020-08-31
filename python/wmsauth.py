@@ -6,7 +6,7 @@ from hashlib import md5
 from time import gmtime, strftime
 
 
-def get_media_url_with_signature(ip, password, validminutes, initial_url, signed_stream, strm_len):
+def get_media_url_with_signature(ip, password, validminutes, initial_url, signed_stream="", strm_len=0):
     """
     Get URL with Hot-link protection signature
     :param ip: Viewer IP address

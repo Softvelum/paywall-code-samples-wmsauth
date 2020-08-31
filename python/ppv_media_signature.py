@@ -6,7 +6,7 @@ from hashlib import md5
 from time import gmtime, strftime
 
 
-def ppv_url_with_signature(ip, user_id, password, validminutes, initial_url, signed_stream, strm_len):
+def ppv_url_with_signature(ip, user_id, password, validminutes, initial_url, signed_stream="", strm_len=0):
     """
     Get URL with signature when using PayPerView method with Nimble
     :param ip: Viewer IP address

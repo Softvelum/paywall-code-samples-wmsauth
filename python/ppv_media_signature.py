@@ -11,7 +11,7 @@ def ppv_url_with_signature(ip, user_id, password, validminutes, initial_url, sig
     Get URL with signature when using PayPerView method with Nimble
     :param ip: Viewer IP address
     :param user_id: User ID used in back-end web server
-    :param password: hot-link protection password wonfigured in WMSPanel Auth Rule
+    :param password: hot-link protection password configured in WMSPanel Auth Rule
     :param validminutes: Valid duration of the URL in minutes. After this time, the URL will not work
     :param initial_url: Full URL stream you want to protect
     :param signed_stream: stream name to make it unique for each stream
